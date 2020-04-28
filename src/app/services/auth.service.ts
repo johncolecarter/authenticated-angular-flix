@@ -19,9 +19,10 @@ export class AuthService {
 
   async login() {
 
-    const loginData = {
+    // tslint:disable-next-line: prefer-const
+    let loginData: {
       username: 'test',
-      password: 'test1'
+      password: 'password'
     };
 
     await this.apiService.post('auth/signup', loginData);
@@ -36,7 +37,7 @@ export class AuthService {
   }
 
   isAuthorized() {
-    if (this.token !== undefined) {
+    if (this.token !== null) {
       return true;
     } else {
       return false;
