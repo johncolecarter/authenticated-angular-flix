@@ -12,9 +12,9 @@ import { HeroButtonComponent } from './hero-button/hero-button.component';
 import { ItemComponent } from './item/item.component';
 import { ListToggleComponent } from './list-toggle/list-toggle.component';
 import { MainComponent } from './main/main.component';
-import { MovieService } from './movie.service';
-import { MovieApiService } from './movie-api.service';
-import { ApiService } from './api.service';
+import { MovieService } from './services/movie.service';
+import { MovieApiService } from './services/movie-api.service';
+import { ApiService } from './services/api.service';
 
 @NgModule({
   declarations: [
