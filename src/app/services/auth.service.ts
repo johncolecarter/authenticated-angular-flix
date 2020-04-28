@@ -19,7 +19,7 @@ export class AuthService {
 
   async login() {
 
-    let loginData: {
+    const loginData = {
       username: 'test',
       password: 'test1'
     };
@@ -33,5 +33,13 @@ export class AuthService {
 
   getToken() {
     return this.token;
+  }
+
+  isAuthorized() {
+    if (this.token !== undefined) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
