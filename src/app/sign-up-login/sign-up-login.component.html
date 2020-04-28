@@ -1,14 +1,14 @@
 <div>
     <p>Username</p>
-    <input type="text" [(ngModel)]="user.username">
+    <input type="text" [(ngModel)]="user.username" class="input">
     <div *ngIf="notLoggedIn === false">
-        <h1>USERNAME REQUIRED</h1>
+        <h1 class="check">* USERNAME REQUIRED</h1>
     </div>
     <p>Password</p>
-    <input type="text" [(ngModel)]="user.password">
+    <input type="text" [(ngModel)]="user.password" class="input">
     <div *ngIf="notLoggedIn === false">
-        <h1>PASSWORD REQUIRED</h1>
+        <h1 class="check">* PASSWORD REQUIRED</h1>
     </div><br>
-    <button (click)="login()">Login</button>
-    <button (click)="signUp()">Sign Up</button>
+    <button (click)="login()" class="btn">Login</button>
+    <button (click)="signUp()" class="btn">Sign Up</button>
 </div>

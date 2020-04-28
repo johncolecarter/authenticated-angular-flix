@@ -1,0 +1,30 @@
+p {
+    margin: 5px;
+    color: grey;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.input {
+    margin: 2px;
+    margin-left: 10px;
+    padding: 5px;
+}
+
+.check {
+    color: red;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.btn {
+    padding: 5px;
+    background: lightgray;
+    color: rgb(97, 96, 96);
+    margin: 10px;
+}
+
+.btn:hover {
+    background: rgb(97, 96, 96);
+    color: lightgray;
+}
