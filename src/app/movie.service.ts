@@ -6,10 +6,10 @@ import { ApiService } from './api.service';
   providedIn: 'root'
 })
 export class MovieService {
-  searchResults= []
-  myMovieList =[]
-  constructor(private movieApi : MovieApiService, private api : ApiService) { }
-   
+  searchResults = [];
+  myMovieList = [];
+  constructor(private movieApi: MovieApiService, private api: ApiService) { }
+
   getSearchResults() {
     return this.searchResults;
   }
@@ -17,17 +17,17 @@ export class MovieService {
     return this.myMovieList;
   }
   async searchForMovies(searchTerm) {
-    let response = await this.movieApi.get(`search/multi?query=${searchTerm}`);
+    const response = await this.movieApi.get(`search/multi?query=${searchTerm}`);
     this.searchResults.length = 0;
     this.searchResults.push(...response.results);
   }
   async loadMovieList() {
-    let results = await this.api.get(`movies`);
+    const results = await this.api.get(`movies`);
     this.myMovieList.length = 0;
     this.myMovieList.push(...results);
   }
   async saveToList(movie) {
-    await this.api.post(`movies`,movie);
+    await this.api.post(`movies`, movie);
     this.loadMovieList();
   }
 }
