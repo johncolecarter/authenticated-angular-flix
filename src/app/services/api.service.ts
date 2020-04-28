@@ -15,7 +15,7 @@ export class ApiService {
         'Content-Type': 'application/json'
       })
     };
-    return await this.httpClient.post(this.url + path, data, httpOptions).toPromise();
+    return await this.httpClient.post(this.url + path, data).toPromise();
   }
 
 }

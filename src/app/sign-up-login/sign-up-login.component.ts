@@ -28,7 +28,7 @@ export class SignUpLoginComponent implements OnInit {
     if (this.user.username === '' || this.user.password === '') {
       this.notLoggedIn = false;
     } else {
-      this.auth.login();
+      this.auth.login(this.user.username, this.user.password);
 
       this.router.navigate(['/main']);
     }

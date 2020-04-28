@@ -6,8 +6,8 @@ import { ApiService } from './api.service';
   providedIn: 'root'
 })
 export class MovieService {
-  searchResults = [];
-  myMovieList = [];
+  searchResults: any[] = [];
+  myMovieList: any[] = [];
   constructor(private movieApi: MovieApiService, private api: ApiService) { }
 
   getSearchResults() {
@@ -26,7 +26,7 @@ export class MovieService {
     this.myMovieList.length = 0;
     this.myMovieList.push(...results);
   }
-  async saveToList(movie) {
+  async saveToList(movie: any) {
     await this.api.post(`movies`, movie);
     this.loadMovieList();
   }

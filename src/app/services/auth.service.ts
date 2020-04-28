@@ -17,17 +17,11 @@ export class AuthService {
     return await responce;
   }
 
-  async login() {
+  async login(username, password) {
 
-    // tslint:disable-next-line: prefer-const
-    let loginData: {
-      username: 'test',
-      password: 'password'
-    };
-
-    await this.apiService.post('auth/signup', loginData);
-
-    const responce = await this.apiService.post('auth/login', loginData);
+    const responce = await this.apiService.post('auth/login', { username, password });
+    this.token = responce.token;
+    console.log(responce.message);
 
     localStorage.setItem('token', this.token);
   }
