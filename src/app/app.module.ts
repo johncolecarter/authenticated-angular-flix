@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +15,7 @@ import { MainComponent } from './main/main.component';
 import { MovieService } from './services/movie.service';
 import { MovieApiService } from './services/movie-api.service';
 import { ApiService } from './services/api.service';
+import { SignUpLoginComponent } from './sign-up-login/sign-up-login.component';
 
 @NgModule({
   declarations: [
@@ -26,12 +27,14 @@ import { ApiService } from './services/api.service';
     HeroButtonComponent,
     ItemComponent,
     ListToggleComponent,
-    MainComponent
+    MainComponent,
+    SignUpLoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [MovieService, MovieApiService, ApiService, NgModule],
   bootstrap: [AppComponent]

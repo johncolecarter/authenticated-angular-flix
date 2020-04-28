@@ -28,7 +28,7 @@ export class AuthService {
 
     const responce = await this.apiService.post('auth/login', loginData);
 
-    this.token = responce.token;
+    localStorage.setItem('token', this.token);
   }
 
   getToken() {
