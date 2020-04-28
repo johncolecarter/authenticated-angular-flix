@@ -14,6 +14,8 @@ export class SignUpLoginComponent implements OnInit {
     password: ''
   };
 
+  notLoggedIn = true;
+
   constructor(
     private auth: AuthService,
     private router: Router
@@ -23,15 +25,19 @@ export class SignUpLoginComponent implements OnInit {
   }
 
   login() {
-    this.auth.login();
+    if (this.user.username === '' || this.user.password === '') {
+      this.notLoggedIn = false;
+    } else {
+      this.auth.login();
 
-    this.router.navigate(['/main']);
+      this.router.navigate(['/main']);
+    }
   }
 
   signUp() {
     this.auth.signUp(this.user.username, this.user.password);
 
-    // this.login();
+    this.login();
   }
 
 }
