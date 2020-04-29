@@ -24,11 +24,11 @@ export class SignUpLoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  login() {
+  async login() {
     if (this.user.username === '' || this.user.password === '') {
       this.notLoggedIn = false;
     } else {
-      this.auth.login(this.user.username, this.user.password);
+      await this.auth.login(this.user.username, this.user.password);
 
       this.router.navigate(['/main']);
     }
